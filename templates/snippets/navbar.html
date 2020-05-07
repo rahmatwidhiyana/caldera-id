@@ -1,0 +1,41 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+
+<!-- Navbar -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light" id="myNav">
+    <div class="container">
+      <a class="navbar-brand" href="">
+        <img src="{% static 'img/icon.png' %}" width="50" height="50" class="d-inline-block align-top rounded-circle" alt="">
+        CALDERA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Koleksi
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'caldera:product_list' %}">T-Shirt</a>
+                <a class="dropdown-item" href="#">Case</a>
+                <a class="dropdown-item" href="#">Mug</a>
+                <a class="dropdown-item" href="#">Power Bank</a>
+                <a class="dropdown-item" href="#">Tumbler</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Lainnya</a>
+              </div>
+            </li>
+          <a class="nav-item nav-link" href="#">Promo</a>
+          <a class="nav-item nav-link" href="#">Konfirmasi Pembayaran</a>
+          <a class="nav-item nav-link" href="#">Jurnal</a>
+          <a class="nav-item nav-link" href="#"> <i class="fas fa-search"></i> </a>
+          <a class="nav-item nav-link" href="#"> <i class="fas fa-shopping-cart"></i> </a>
+          <a class="nav-item btn btn-primary tombol" href="{% url 'login' %}"> <i class="fas fa-sign-in-alt"></i>  Log In</a>
+        </div>
+      </div>
+    </div>
+    </nav>
+  <!-- Navbar End -->

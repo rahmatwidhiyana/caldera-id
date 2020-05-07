@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <title>CALDERA SHIRT</title>
+
+  {% include "snippets/styles.html" %}
+<!-- Base CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/category.css' %}">
+
+</head>
+<body>
+
+<!-- Navbar -->
+{% include "snippets/navbar.html" %}
+<!-- Navbar End -->
+
+<!-- Product View -->
+<div class="container">
+  <div class="row justify-content-center">
+            <div class="col-2">
+                <div class="filter">
+                    <h3>Filter by</h3>
+                    <ol class="list-unstyled">
+                      <li {% if not category %} class="active"{% endif %}><a href="{% url 'caldera:product_list' %}">All</a></li>
+                    {% for c in categories %}
+                      <li {% if category.slug == c.slug %} class="active"{% endif %}>
+                          <a href="{{ category.get_absolute_url }}">{{ c.name }}</a>
+                      </li>
+                    {% endfor %}
+                    </ol>
+        
+            </div>
+          </div>
+            
+  
+<div class="col-10">
+  <div class=product-list id="main">
+    <div class="row justify-content-start">
+      {% for product in products %}
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <div class="item">
+            <a href="{{ product.get_absolute_url }}">
+              <img src= "{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/kopi.jpg' %}{% endif %}" class="img-fluid" alt="Responsive image">
+            </a>
+          <a href="{{ product.get_absolute_url }}">
+        <div class="container category">
+          <h2 class="title">{{ product.name }}</h2>
+          <div class="price">{{ product.price }}</div>
+        </div>
+      </a>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+     </div>
+
+     
+            </div>
+              
+  </div>
+</div>
+
+<!-- Product Card -->
+<!-- <div class="container">
+<div class="product-card">
+    <h1>Original Cloth</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div class="product-pic"></div>
+    <div class="product-colors">
+      <span class="blue active" data-color="#7ed6df" data-pic="url(/static/img/1.png)"></span>
+      <span class="green" data-color="#badc58" data-pic="url(/static/img/2.png)"></span>
+      <span class="yellow" data-color="#f9ca24" data-pic="url(/static/img/3.png)"></span>
+      <span class="rose" data-color="#ff7979" data-pic="url(/static/img/4.png)"></span> 
+    </div>
+    <div class="product-info">
+      <div class="product-price">$90</div>
+      <a href="" class="product-button">Add to Cart</a>
+      </div>
+      </div>
+      </div> -->
+      
+
+<!-- Footer -->
+{% include "snippets/footer.html" %}
+<!-- End Footer -->
+
+
+    
+  {% include "snippets/scripts.html" %}
+      
+</body>
+</html>

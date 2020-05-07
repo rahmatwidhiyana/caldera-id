@@ -1,0 +1,286 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <title>BASE CALDERA</title>
+
+  {% include "snippets/styles.html" %}
+<!-- Base CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/calder.css' %}">
+
+</head>
+<body>
+
+<!-- Navbar -->
+{% include "snippets/navbar.html" %}
+<!-- Navbar End -->
+
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">FIND & EXPLORE <span> <br> OUR NATURE</span> <br> WITH {{user}}</h1>
+      <a href="{% url 'login' %}" class="btn btn-primary tombol">Start Adventure</a>
+
+  </div>
+</div>
+
+
+<h1> Our Best Product </h1>
+<!-- Features -->
+<section class="features bg-light">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col">
+        <h3>Promo Akhir Tahun</h3>
+      </div>
+    </div>
+    
+  <div class="product-base" id="main">
+    <div class="row">
+      {% for spesial in products %}
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <figure class="figure">
+          <div class="figure-img">
+            <img src="{% if spesial.image %}{{ spesial.image.url }}{% else %}{% static 'img/kopi.jpg' %}{% endif %}" class="figure-img img-fluid">
+            <a href="{{ spesial.get_absolute_url }}" class="d-flex justify-content-center">
+              <img src="/static/img/detail.png" class="align-self-center">
+            </a>
+          </div>
+          <figcaption class="figure-caption text-center">
+            <a href="{{ spesial.get_absolute_url }} ">
+            <h5>{{ spesial.name }}</h5>
+            <p>{{ spesial.price }}</p>
+          </a>
+          </figcaption>
+        </figure>
+      </div>
+      {% endfor %}
+      
+      <!-- <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <figure class="figure">
+          <div class="figure-img">
+            <img src="/static/img/kopi.jpg" class="figure-img img-fluid">
+            <a href="" class="d-flex justify-content-center">
+              <img src="/static/img/detail.png" class="align-self-center">
+            </a>
+          </div>
+          <figcaption class="figure-caption text-center">
+            <h5>Jeans Pubb</h5>
+            <p>IDR 190.300</p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <figure class="figure">
+          <div class="figure-img">
+            <img src="/static/img/kompas.jpg" class="figure-img img-fluid">
+            <a href="" class="d-flex justify-content-center">
+              <img src="/static/img/detail.png" class="align-self-center">
+            </a>
+          </div>
+          <figcaption class="figure-caption text-center">
+            <h5>Jeans Pubb</h5>
+            <p>IDR 190.300</p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <figure class="figure">
+          <div class="figure-img">
+            <img src="/static/img/kopi.jpg" class="figure-img img-fluid">
+            <a href="" class="d-flex justify-content-center">
+              <img src="/static/img/detail.png" class="align-self-center">
+            </a>
+          </div>
+          <figcaption class="figure-caption text-center">
+            <h5>Jeans Pubb</h5>
+            <p>IDR 190.300</p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <figure class="figure">
+          <div class="figure-img">
+            <img src="/static/img/kompas.jpg" class="figure-img img-fluid">
+            <a href="" class="d-flex justify-content-center">
+              <img src="/static/img/detail.png" class="align-self-center">
+            </a>
+          </div>
+          <figcaption class="figure-caption text-center">
+            <h5>Jeans Pubb</h5>
+            <p>IDR 190.300</p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <figure class="figure">
+          <div class="figure-img">
+            <img src="/static/img/kopi.jpg" class="figure-img img-fluid">
+            <a href="" class="d-flex justify-content-center">
+              <img src="/static/img/detail.png" class="align-self-center">
+            </a>
+          </div>
+          <figcaption class="figure-caption text-center">
+            <h5>Jeans Pubb</h5>
+            <p>IDR 190.300</p>
+          </figcaption>
+        </figure>
+      </div> -->
+    </div>
+  </div>
+  </div>
+</section>
+<!-- Akhir Features -->
+
+<!-- Carousel -->
+
+      <div id="carouselExampleInterval" class="info-carousel carousel slide mt-2 mb-3" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-interval="3000">
+                <img src="{% static 'img/bendera1.jpg' %}" class="d-block w-100">
+              </div>
+              <div class="carousel-item" data-interval="2000">
+                <img src="{% static 'img/sumbing1.jpg' %}" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'img/prau1.jpg' %}" type="text/javascript" class="d-block w-100">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          
+<!-- Carousel End -->
+
+ 
+<!-- IMG -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-6 col-lg-4">
+      <img src="/static/img/kompas.jpg" class="img-fluid" alt="Responsive image">
+      <div class="container content">
+        <h1>SHIRT<br> TROPICAL</h1>
+      </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-4">
+      <img src="/static/img/kompas.jpg" class="img-fluid" alt="Responsive image">
+      <div class="container content">
+                <h1>HOODIE <br> TROPICAL</h1>
+                 </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+              <img src="/static/img/kompas.jpg" class="img-fluid" alt="Responsive image">
+              <div class="container content">
+                  <h1>HAT<br> TROPICAL</h1>
+                   </div>
+            </div>
+
+    </div> 
+</div>
+
+<!-- Product Card -->
+<!-- <div class="container">
+<div class="product-card">
+    <h1>Original Cloth</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div class="product-pic"></div>
+    <div class="product-colors">
+      <span class="blue active" data-color="#7ed6df" data-pic="url(/static/img/1.png)"></span>
+      <span class="green" data-color="#badc58" data-pic="url(/static/img/2.png)"></span>
+      <span class="yellow" data-color="#f9ca24" data-pic="url(/static/img/3.png)"></span>
+      <span class="rose" data-color="#ff7979" data-pic="url(/static/img/4.png)"></span> 
+    </div>
+    <div class="product-info">
+      <div class="product-price">$90</div>
+      <a href="" class="product-button">Add to Cart</a>
+      </div>
+      </div>
+      </div> -->
+      
+
+      <!-- InstaCaldera -->
+ <section class="instagram">
+    <div class="container bg-light rounded mt-5">
+      <div class="container text-center">
+        <h1> <i class="fab fa-instagram"></i> @calderaid</h1>
+       
+      </div>
+      <div class="row">
+
+          <div class="col-lg-3 col-sm-6 col-sm-6 px-0 figure-img">
+              <img src="/static/img/1.png" class="figure-img img-fluid">
+              <a href="" class="d-flex justify-content-center">
+                <h6 class="align-self-center">@widhiyana__</h6>
+              </a>
+            </div>
+
+        <div class="col-lg-3 col-sm-6 col-sm-6 px-0 figure-img">
+            <img src="/static/img/2.png" class="figure-img img-fluid">
+            <a href="" class="d-flex justify-content-center">
+              <h6 class="align-self-center">@widhiyana__</h6>
+            </a>
+          </div>
+          
+          <div class="col-lg-3 col-sm-6 col-sm-6 px-0 figure-img">
+              <img src="/static/img/3.png" class="figure-img img-fluid">
+              <a href="" class="d-flex justify-content-center">
+                <h6 class="align-self-center">@widhiyana__</h6>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-sm-6 px-0 figure-img">
+                <img src="/static/img/4.png" class="figure-img img-fluid">
+                <a href="" class="d-flex justify-content-center">
+                  <h6 class="align-self-center">@widhiyana__</h6>
+                </a>
+              </div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-3 col-sm-6 col-sm-6 px-0 figure-img">
+              <img src="/static/img/1.png" class="figure-img img-fluid">
+              <a href="" class="d-flex justify-content-center">
+                <h6 class="align-self-center">@widhiyana__</h6>
+              </a>
+            </div>
+
+        <div class="col-lg-3 col-sm-6 col-sm-6 px-0 figure-img">
+            <img src="/static/img/2.png" class="figure-img img-fluid">
+            <a href="" class="d-flex justify-content-center">
+              <h6 class="align-self-center">@widhiyana__</h6>
+            </a>
+          </div>
+          
+          <div class="col-lg-3 col-sm-6 col-sm-6 px-0 figure-img">
+              <img src="/static/img/3.png" class="figure-img img-fluid">
+              <a href="" class="d-flex justify-content-center">
+                <h6 class="align-self-center">@widhiyana__</h6>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-sm-6 px-0 figure-img">
+                <img src="/static/img/4.png" class="figure-img img-fluid">
+                <a href="" class="d-flex justify-content-center">
+                  <h6 class="align-self-center">@widhiyana__</h6>
+                </a>
+              </div>
+    </div>
+  </section>
+  <!-- Akhir Brands -->
+
+<!-- Footer -->
+{% include "snippets/footer.html" %}
+<!-- End Footer -->
+
+
+    
+  {% include "snippets/scripts.html" %}
+      
+</body>
+</html>

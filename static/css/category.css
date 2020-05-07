@@ -1,0 +1,23 @@
+
+.title {
+    font-size: 17px;
+}
+
+.price {
+    color: rgb(165, 42, 42);
+    font-family: sans-serif;
+}
+
+.filter {
+    position: fixed;
+    
+}
+
+
+@media (min-width: 992px){
+
+    body {
+        margin-bottom: 300px;
+}
+
+}

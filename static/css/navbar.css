@@ -1,0 +1,48 @@
+/* Navbar */
+.navbar{
+    /* position: relative; */
+    z-index: 2;
+  }
+  
+  .navbar-brand {
+      font-family: verdana;
+      font-size: 32px;
+  
+  }
+
+  /* DESKTOP VERSION */
+
+@media (min-width: 992px){
+
+    .navbar-brand, .nav-link {
+      color: rgb(255, 255, 255) !important;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    }
+  
+    .nav-link {
+      text-transform: uppercase;
+      margin-right: 30px;
+    }
+  
+    .nav-link:hover::after{
+      content: '';
+      display: block;
+      border-bottom: 3px solid rgb(35, 21, 238);
+      width: 50%;
+      margin: auto;
+      padding-bottom: 5px;
+      margin-bottom: -8px;
+    }
+  
+    .navcollect{
+      color: white !important;
+      text-transform: uppercase;
+      margin: auto;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    }
+  
+    .collect{
+      margin-right: 30px;
+      margin-top: 8px;
+    }
+}

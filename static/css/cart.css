@@ -1,0 +1,16 @@
+body{
+    margin-bottom: 500px;
+}
+.checkout-detail {
+    background-color: #F6F7FB;
+    border: 1px solid #EAEAEA;
+    color: #161616;
+  }
+
+@media (min-width: 992px){
+
+body {
+    margin-bottom: 300px;
+}
+
+}
