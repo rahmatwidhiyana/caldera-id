@@ -1,6 +1,5 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <title>My Profile</title>
@@ -15,17 +14,72 @@
     <!-- Navbar End -->
 
     <!-- My Profile -->
+    <div class="container">
+        <h1>MY PROFILE</h1>
+        <div class="row">
+            <div class="col-md-3 left-side">
+                <a href="#"> <i class="far fa-edit float-right edit"> </i> </a>
+                <img src="/static/img/default-avatar.png" class="img-profile rounded-circle img-fluid mx-auto d-block"
+                    alt="">
+                <h1>Rahmat Widhiyana</h1>
+                <span class="mx-auto d-block">Joined 04 Mei 2020</span>
+                <div class="HR"></div>
+                <ul class="info-profile">
+                    <li>
+                        <i class="far fa-envelope"></i>
+                        <span>widhi@gmail.co.id</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-birthday-cake"></i>
+                        <span>16 Februari 2001</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>08123456789</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Pacific Century Place Tower Level 45 SCBD Lot 10, Jl. Jend. Sudirman No.53, RT.5/RW.3,
+                            Senayan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12190</span>
+                    </li>
+                </ul>
+                <a class="log" href="#"> <i class="fas fa-sign-out-alt"></i> <span>logout</span> </a>
+
+
+
+            </div>
+            <div class="col-md-8 offset-md-1 right-side">
+                <h1>DAFTAR TRANSAKSI</h1>
+            </div>
+        </div>
+
+
+
+    </div>
 
 
 
 
+    <!-- Footer -->
+    {% include "snippets/footer.html" %}
+    <!-- End Footer -->
 
+    <!-- Scripts -->
+    {% include "snippets/scripts.html" %}
+    <!-- End Scripts -->
 
+    <!-- JAVASCRIPT -->
+    <script type="text/javascript">
+        $(".txtb input").on("focus", function () {
+            $(this).addClass("focus");
+        });
 
-
-
-
-
+        $(".txtb input").on("blur", function () {
+            if ($(this).val() == "")
+                $(this).removeClass("focus");
+        });
+    </script>
+    <!-- END JAVASCRIPT -->
 
 
 </body>

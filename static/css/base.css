@@ -21,11 +21,11 @@ html{
 /* Jumbotron */
 .jumbotron {
   background-image: url(/static/img/rinjani.jpg);
-  background-size: cover;
+  background-size: cover; 
   height: 500px;
   text-align: center;
   position: relative;
-}
+} 
 
 .jumbotron .container {
   z-index: 1;
