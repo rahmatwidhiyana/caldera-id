@@ -71,7 +71,7 @@ body{
   top: 0;
   left: 0;
   right: 0;
-  bottom: 8px;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
   transition: opacity 0.3s;
@@ -80,7 +80,6 @@ body{
 .figure-img:hover a {
   opacity: 1;
 }
-
 
 /* Utility */
 .tombol{
