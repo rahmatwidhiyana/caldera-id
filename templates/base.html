@@ -36,100 +36,31 @@
         </div>
       </div>
 
-      <div class="product-base" id="main">
-        <div class="row">
-          {% for spesial in products %}
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-            <figure class="figure">
-              <div class="figure-img">
-                <img src="{% if spesial.image %}{{ spesial.image.url }}{% else %}{% static 'img/kopi.jpg' %}{% endif %}"
-                  class="figure-img img-fluid">
-                <a href="{{ spesial.get_absolute_url }}" class="d-flex justify-content-center">
-                  <img src="/static/img/detail.png" class="align-self-center">
-                </a>
-              </div>
-              <figcaption class="figure-caption text-center">
-                <a href="{{ spesial.get_absolute_url }} ">
-                  <h5>{{ spesial.name }}</h5>
-                  <p>{{ spesial.price }}</p>
-                </a>
-              </figcaption>
-            </figure>
+      <div class=product-list id="main">
+        <div class="row justify-content-start">
+          {% for product in products %}
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="item">
+              <a href="{{ product.get_absolute_url }}">
+                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/kopi.jpg' %}{% endif %}"
+                  class="img-fluid" alt="Responsive image">
+              </a>
+              <a href="{{ product.get_absolute_url }}">
+                <div class="container category">
+                  <h2 class="title">{{ product.name }}</h2>
+                  <div class="price">{{ product.price }}</div>
+                </div>
+              </a>
+            </div>
           </div>
           {% endfor %}
-
-          <!-- <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <figure class="figure">
-          <div class="figure-img">
-            <img src="/static/img/kopi.jpg" class="figure-img img-fluid">
-            <a href="" class="d-flex justify-content-center">
-              <img src="/static/img/detail.png" class="align-self-center">
-            </a>
-          </div>
-          <figcaption class="figure-caption text-center">
-            <h5>Jeans Pubb</h5>
-            <p>IDR 190.300</p>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <figure class="figure">
-          <div class="figure-img">
-            <img src="/static/img/kompas.jpg" class="figure-img img-fluid">
-            <a href="" class="d-flex justify-content-center">
-              <img src="/static/img/detail.png" class="align-self-center">
-            </a>
-          </div>
-          <figcaption class="figure-caption text-center">
-            <h5>Jeans Pubb</h5>
-            <p>IDR 190.300</p>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <figure class="figure">
-          <div class="figure-img">
-            <img src="/static/img/kopi.jpg" class="figure-img img-fluid">
-            <a href="" class="d-flex justify-content-center">
-              <img src="/static/img/detail.png" class="align-self-center">
-            </a>
-          </div>
-          <figcaption class="figure-caption text-center">
-            <h5>Jeans Pubb</h5>
-            <p>IDR 190.300</p>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <figure class="figure">
-          <div class="figure-img">
-            <img src="/static/img/kompas.jpg" class="figure-img img-fluid">
-            <a href="" class="d-flex justify-content-center">
-              <img src="/static/img/detail.png" class="align-self-center">
-            </a>
-          </div>
-          <figcaption class="figure-caption text-center">
-            <h5>Jeans Pubb</h5>
-            <p>IDR 190.300</p>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <figure class="figure">
-          <div class="figure-img">
-            <img src="/static/img/kopi.jpg" class="figure-img img-fluid">
-            <a href="" class="d-flex justify-content-center">
-              <img src="/static/img/detail.png" class="align-self-center">
-            </a>
-          </div>
-          <figcaption class="figure-caption text-center">
-            <h5>Jeans Pubb</h5>
-            <p>IDR 190.300</p>
-          </figcaption>
-        </figure>
-      </div> -->
         </div>
       </div>
+
+
+    </div>
+
+    </div>
     </div>
   </section>
   <!-- Akhir Features -->
@@ -139,13 +70,19 @@
   <div id="carouselExampleInterval" class="info-carousel carousel slide mt-2 mb-3" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-interval="3000">
+        <a href="http://">
         <img src="{% static 'img/bendera1.jpg' %}" class="d-block w-100">
+      </a>
       </div>
       <div class="carousel-item" data-interval="2000">
+        <a href="http://">
         <img src="{% static 'img/sumbing1.jpg' %}" class="d-block w-100">
+      </a> 
       </div>
       <div class="carousel-item">
+        <a href="http://">
         <img src="{% static 'img/prau1.jpg' %}" type="text/javascript" class="d-block w-100">
+      </a>
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -164,25 +101,32 @@
   <!-- IMG -->
   <div class="container">
     <div class="row justify-content-center">
+
       <div class="col-sm-6 col-lg-4">
+        <a href="http://">
         <img src="/static/img/kompas.jpg" class="img-fluid" alt="Responsive image">
         <div class="container content">
           <h1>SHIRT<br> TROPICAL</h1>
         </div>
+      </a>
       </div>
 
       <div class="col-sm-6 col-lg-4">
+        <a href="http://">
         <img src="/static/img/kompas.jpg" class="img-fluid" alt="Responsive image">
         <div class="container content">
           <h1>HOODIE <br> TROPICAL</h1>
         </div>
+      </a>
       </div>
 
       <div class="col-sm-6 col-lg-4">
+         <a href="http://">
         <img src="/static/img/kompas.jpg" class="img-fluid" alt="Responsive image">
         <div class="container content">
           <h1>HAT<br> TROPICAL</h1>
         </div>
+      </a>
       </div>
 
     </div>
@@ -211,8 +155,10 @@
   <!-- InstaCaldera -->
   <section class="instagram">
     <div class="container bg-light rounded mt-5">
-      <div class="container text-center">
+      <div class="container text-center ">
+        <a href="http://">
         <h1> <i class="fab fa-instagram"></i> @calderaid</h1>
+      </a>
       </div>
 
       <div class="row">
@@ -251,9 +197,30 @@
             <h6 class="align-self-center">@widhiyana__</h6>
           </a>
         </div>
-       
+
+        <div class="col-lg-3 col-sm-6 col-6 px-0 pb-0 m-0 figure-img">
+          <img src="/static/img/foto-ig.jpg" class="img-fluid d-block p-0">
+          <a href="" class="d-flex justify-content-center">
+            <h6 class="align-self-center">@widhiyana__</h6>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-6 px-0 pb-0 m-0 figure-img">
+          <img src="/static/img/foto-ig.jpg" class="img-fluid d-block p-0">
+          <a href="" class="d-flex justify-content-center">
+            <h6 class="align-self-center">@widhiyana__</h6>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-6 px-0 pb-0 m-0 figure-img">
+          <img src="/static/img/foto-ig.jpg" class="img-fluid d-block p-0">
+          <a href="" class="d-flex justify-content-center">
+            <h6 class="align-self-center">@widhiyana__</h6>
+          </a>
+        </div>
+
       </div>
-      </div>
+    </div>
   </section>
   <!-- Akhir Brands -->
 
