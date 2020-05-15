@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <title>LOG IN</title>
+
+  {% include "snippets/styles.html" %}
+
+  <!-- Login CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+</head>
+<body>
+
+<!-- Navbar -->
+{% include "snippets/navbar.html" %}
+<!-- Navbar End -->
+
+<!-- Login Form -->
+<form method="POST" class="login-form">
+    {% csrf_token %}
+    <h1>Login</h1>
+    <div class="txtb">
+      <input type="text" name="username" id="username">
+      <span data-placeholder="Username"></span>
+    </div>
+
+    <div class="txtb">
+      <input type="password" name="password" id="password">
+      <span data-placeholder="Password"></span>
+    </div> 
+
+    <input type="submit" class="logbtn" value="Login">
+
+    <div class="bottom-text">
+      Don't have account? <a href="#">Sign up</a>
+    </div>
+
+  </form>
+
+
+
+<!-- Footer -->
+{% include "snippets/footer.html" %}
+<!-- End Footer -->
+
+
+    
+  {% include "snippets/scripts.html" %}
+
+  <script type="text/javascript">
+    $(".txtb input").on("focus",function(){
+      $(this).addClass("focus");
+    });
+
+    $(".txtb input").on("blur",function(){
+      if($(this).val() == "")
+      $(this).removeClass("focus");
+    });
+  </script>
+
+      
+</body>
+</html>

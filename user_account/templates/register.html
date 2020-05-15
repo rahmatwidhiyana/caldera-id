@@ -17,7 +17,7 @@
 <!-- Navbar End -->
 
 <!-- Login Form -->
-<form method="POST" action="#" class="login-form">
+<form method="POST" action="{% url 'register' %}" class="login-form">
     {% csrf_token %}
     <h1>REGISTER</h1>
 
@@ -41,7 +41,7 @@
         <span data-placeholder="Confirm Password"></span>
       </div>
 
-    <input type="submit" class="logbtn" value="DAFTAR">
+    <input type="submit" class="logbtn" value="Register">
   </form>
 
 
