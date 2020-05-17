@@ -43,12 +43,15 @@
                             Senayan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12190</span>
                     </li>
                 </ul>
-                <a class="log" href="#"> <i class="fas fa-sign-out-alt"></i> <span>logout</span> </a>
+
+                <a class="log" href="{% url 'user:logout' %}">
+                 <i class="fas fa-sign-out-alt"></i><span>log out</span>
+                 </a>
 
 
 
             </div>
-            <div class="col-md-8 offset-md-1 right-side">
+            <div class="col-md-8 offset-md-1 right-side"> 
                 <h1>DAFTAR TRANSAKSI</h1>
             </div>
         </div>

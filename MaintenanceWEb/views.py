@@ -1,13 +1,18 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
-
+from django.contrib.auth import authenticate
 
 class IndexView(TemplateView):
     template_name = "index.html"
 
 
-class HomeView(TemplateView):
-    template_name = "base.html"
+def homeView(request):
+    template_name = None
+    if request.user.is_authenticated():
+        template_name = 'base-login.html'
+    else:
+        template_name = 'base.html'
+    return render (request, template_name)
 
 class JurnalView(TemplateView):
     template_name = "jurnal.html"

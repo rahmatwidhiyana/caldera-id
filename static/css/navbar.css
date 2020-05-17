@@ -23,7 +23,14 @@
       text-transform: uppercase;
       margin-right: 30px;
     }
-  
+
+    .nav-link-drop {
+      color: rgb(255, 255, 255) !important;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+      text-transform: uppercase;
+      margin-right: 30px;
+    } 
+
     .nav-link:hover::after{
       content: '';
       display: block;
@@ -34,7 +41,7 @@
       margin-bottom: -8px;
     }
   
-    .navcollect{
+    /* .navcollect{
       color: white !important;
       text-transform: uppercase;
       margin: auto;
@@ -44,5 +51,5 @@
     .collect{
       margin-right: 30px;
       margin-top: 8px;
-    }
+    } */
 }
