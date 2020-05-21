@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'caldera',
     'cart',
-    'user_account',
+    'user_account.apps.UserAccountConfig',
 ]
 
 MIDDLEWARE = [

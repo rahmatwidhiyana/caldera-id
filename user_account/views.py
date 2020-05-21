@@ -52,4 +52,6 @@ def logoutView(request):
 
     return render(request, "logout.html")
 
-
+@login_required
+def profileView(request):
+    return render(request, "profile.html")

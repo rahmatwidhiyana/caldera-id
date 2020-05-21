@@ -28,7 +28,3 @@ class SingleView(TemplateView):
 
 class LambdaView(TemplateView):
     template_name = "cart.html"
-
-
-class ProfileView(TemplateView):
-    template_name = "profile.html"

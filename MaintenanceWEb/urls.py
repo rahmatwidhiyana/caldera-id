@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.views.generic.base import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
-from.views import IndexView,JurnalView,CategoryView,SingleView,LambdaView,ProfileView,homeView
+from.views import IndexView,JurnalView,CategoryView,SingleView,LambdaView,homeView
 
 urlpatterns = [
     url(r'^index$', IndexView.as_view(),name='index'),
@@ -11,8 +11,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^jurnal$', JurnalView.as_view(), name='jurnal'),
     url(r'^lamda$', LambdaView.as_view(), name='lambda'),
-    url(r'^myprofile$', ProfileView.as_view(), name='profile'),
     url(r'^',include('caldera.url', namespace='caldera')),
     url(r'^cart/',include('cart.url', namespace='cart')),
     url(r'^',include('user_account.url', namespace='user')),
-    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
