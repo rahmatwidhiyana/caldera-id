@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'caldera',
     'cart',
     'user_account.apps.UserAccountConfig',
@@ -128,3 +129,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID='cart'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

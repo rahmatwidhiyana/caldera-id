@@ -1,0 +1,13 @@
+
+body{
+  margin-bottom: 300px;
+  background-image: linear-gradient(120deg,#3498db,#8e44ad);
+}
+
+.signup-form{
+  width: 500px;
+  background: #f1f1f1;
+  padding: 80px 40px; 
+  border-radius: 10px;
+  margin: auto;
+}

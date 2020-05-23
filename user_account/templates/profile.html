@@ -18,10 +18,10 @@
         <h1>MY PROFILE</h1>
         <div class="row">
             <div class="col-md-3 left-side">
-                <a href="#"> <i class="far fa-edit float-right edit"> </i> </a>
+                <a href="{% url 'user:edit-profile' %}"> <i class="far fa-edit float-right edit"> </i> </a>
                 <img src="{{ user.profile.image.url }}" class="img-profile rounded-circle img-fluid mx-auto d-block"
                     alt="">
-                <h1>{{ user.username }}</h1>
+                <h1>{{ user.first_name }} {{ user.last_name }}</h1>
                 <span class="mx-auto d-block">Joined 04 Mei 2020</span>
                 <div class="HR"></div>
                 <ul class="info-profile">

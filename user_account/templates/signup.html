@@ -1,13 +1,14 @@
 {% load static %}
-<!DOCTYPE html>
+{% load crispy_forms_tags %}
 
+<!DOCTYPE html>
 <head>
-    <title>SIGNUP</title>
+    <title>SIGN UP</title>
 
   {% include "snippets/styles.html" %}
 
   <!-- Login CSS -->
-{% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"> {% endcomment %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
 
 </head>
 <body>
@@ -16,32 +17,34 @@
 {% include "snippets/navbar.html" %}
 <!-- Navbar End -->
 
-<!-- Login Form -->
-<h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
+<!-- SignUp Form -->
+<div class="signup-form">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <h1 class="border-bottom mb-4 text-center">Join Today</h1>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group text-center">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3 text-center">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="{% url 'user:login' %}">Log In</a>
+            </small>
+        </div>
+    </div>
+
+<!-- End SignUp Form -->
 
 <!-- Footer -->
-{% comment %} {% include "snippets/footer.html" %} {% endcomment %}
+{% include "snippets/footer.html" %}
 <!-- End Footer -->
 
 
     
-  {% include "snippets/scripts.html" %}
+{% include "snippets/scripts.html" %}
 
   <script type="text/javascript">
     $(".txtb input").on("focus",function(){

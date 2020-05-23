@@ -20,7 +20,8 @@
 <form method="POST" class="login-form">
     {% csrf_token %}
     <h1>Are you sure want to log out ?</h1>
-    <input type="submit" class="logbtn" name="logout">
+    <input class="logbtn" type="submit" name="logout">
+    <a class="logbtn text-center mt-2" href="/">NO</a>
   </form>
 
 
