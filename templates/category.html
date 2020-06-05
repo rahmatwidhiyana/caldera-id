@@ -26,7 +26,7 @@
             <li {% if not category %} {% endif %}><a href="{% url 'caldera:product_list' %}">All</a></li>
             {% for c in categories %}
             <li {% if category.slug == c.slug %} {% endif %}>
-              <a href="{{ Category.get_absolute_url }}">{{ c.name }}</a>
+              <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
             </li>
             {% endfor %}
           </ol>
