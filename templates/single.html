@@ -7,7 +7,7 @@
   {% include "snippets/styles.html" %}
 <!-- Base CSS -->
 <link rel="stylesheet" type="text/css" href="{% static 'css/single.css' %}">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
 
@@ -16,16 +16,6 @@
 <!-- Navbar End -->
 
 <div class="product-detail">
-<!-- Breadcrumbs -->
-<div class="container">
-    <nav>
-      <ol class="breadcrumb bg-transparent pl-0">
-        <li class="breadcrumb-item"><a href="#">Category</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Single Product</li>
-      </ol>
-    </nav>
-  </div>
-
   <!-- Single Product -->
   <section class="single-product">
     <div class="product-detail">
@@ -53,24 +43,41 @@
 
         <div class="col-lg-4">
           <h3>{{ product.name }}</h3>
-          <p class="text-muted">{{ product.price }}</p>
+          <h4 class="text-muted">Rp {{ product.price }}</h4>
 
-          <button type="button" class="btn btn-sm" style="background-color: #EAEAEF; color: white;"><i
-              class="fas fa-minus-circle"></i></button>
-          <span class="mx-2">20</span>
-          <button type="button" class="btn btn-sm btn-success" style="color: white;"><i
+          <div id="size" class="size-product">
+            <ul class="clearfix">
+              <li class="size active">
+                <span>39</span>
+              </li>
+               
+              <li>
+                <span>40</span>
+              </li>
+  
+              <li>
+                <span>41</span>
+              </li>
+
+              <li>
+                <span>42</span>
+              </li>
+              
+            </ul>
+          </div>
+
+          <button type="button" class="btn btn-sm btn-warning qty-minus" style="color: white;">
+            <i class="fas fa-minus-circle"></i> </button>
+          <input class="quantity" type="numeric" value="3" />
+          <button type="button" class="btn btn-sm btn-success qty-plus" style="color: white;"><i
               class="fas fa-plus-circle"></i></button>
-
-              <form action="{% url 'cart:cart_add' product.id %}" method="POST">
-                {{ cart_product_form }}
-                {% csrf_token %}
+              
           <div class="btn-product">
-            <input type="submit" class="btn btn-warning text-white" value="Add to cart">
+            <!-- <input type="submit" class="btn btn-warning text-white" value="Add to cart"> -->
             <a href="" class="btn" style="background-color: #EAEAEF; color: #ADADAD;">Add to Wishlist</a>
           </div>
-        </form>
 
-          <div class="designed-by">
+          <!-- <div class="designed-by">
             <h5>Designed by</h5>
             <div class="row">
               <div class="col-2">
@@ -81,7 +88,7 @@
                 <p>14.2K <span>Followers</span></p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     
@@ -245,9 +252,9 @@
 {% include "snippets/footer.html" %}
 <!-- End Footer -->
 
+{% include "snippets/scripts.html" %}
+<script src="/static/js/size.js" type="text/javascript"></script>
+<script src="/static/js/quantity.js" type="text/javascript"></script>
 
-    
-  {% include "snippets/scripts.html" %}
-      
 </body>
 </html>
